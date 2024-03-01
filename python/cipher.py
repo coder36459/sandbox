@@ -9,3 +9,5 @@ for x in s:
 	b += x + secrets.choice(s)
 print(a)
 print(b)
+print("".join(a))
+print("".join(b))
