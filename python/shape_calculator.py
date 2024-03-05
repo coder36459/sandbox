@@ -28,9 +28,26 @@ class Rectangle:
 	def __str__(self):
 		return f"Rectangle(width={self.width}, height={self.height})"
 
-
 class Square(Rectangle):
-	pass
+	
+	def __init__(self, side_length):
+		self.width = side_length
+		self.height = side_length
+	
+	def set_side(self, side_length):
+		self.width = side_length
+		self.height = side_length
+	
+	def set_width(self, width):
+		self.width = width
+		self.height = width
+	
+	def set_height(self, height):
+		self.width = height
+		self.height = height
+		
+	def __str__(self):
+		return f"Square(side={self.width})"
 
 
 rect = Rectangle(10, 5)
