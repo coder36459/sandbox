@@ -20,10 +20,19 @@ class Rectangle:
 		return (self.width ** 2 + self.height ** 2) ** .5
 	
 	def get_picture(self):
-		pass
+		if self.width > 50 or self.height > 50:
+			return "Too big for picture."
+		else:
+			i = 0
+			s = ""
+			while i < self.height:
+				o = (self.width - 1) * "*"
+				s += f"*{o}\n"
+				i += 1
+			return s
 	
-	def get_amount_inside(self):
-		pass
+	def get_amount_inside(self, shape):
+		return int(self.get_area() / shape.get_area())
 	
 	def __str__(self):
 		return f"Rectangle(width={self.width}, height={self.height})"
@@ -57,13 +66,13 @@ print(rect.get_perimeter())
 print(rect)
 print(rect.get_picture())
 
-#sq = Square(9)
-#print(sq.get_area())
-#sq.set_side(4)
-#print(sq.get_diagonal())
-#print(sq)
-#print(sq.get_picture())
+sq = Square(9)
+print(sq.get_area())
+sq.set_side(4)
+print(sq.get_diagonal())
+print(sq)
+print(sq.get_picture())
 
 rect.set_height(8)
 rect.set_width(16)
-#print(rect.get_amount_inside(sq))
+print(rect.get_amount_inside(sq))
