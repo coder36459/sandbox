@@ -1,19 +1,25 @@
 "use strict";
-const decimal = 105;
+const decimal = 12; //1005;
 function converter(n) {
 	const hex = "0123456789ABCDEF";
-	let number = n, hexArray = [], cHex = [];
-	hexArray = hex.split("");
+	const hexArray = hex.split("");
+	let number = n, cHex = [];
 	if (number > 16) {
-		let x, y;
-		x = Math.floor(number / 16);
+		let x = Math.floor(number / 16);
 		cHex.push(x);
-		y = number % 16;
+		let y = number % 16;
 		if (y < 10) {
 			cHex.push(y);
 		}
 	}
-	return cHex;
+	else {
+		let x;
+		for (x in hexArray) {
+			if (number == x) {
+				cHex.push(hexArray[x]);
+			}
+		}
 	}
+	return cHex;
+}
 console.log(converter(decimal));
-
