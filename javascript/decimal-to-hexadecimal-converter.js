@@ -1,15 +1,27 @@
 "use strict";
-const decimal = 12; //1005;
+const decimal = 21; //1005;
 function converter(n) {
 	const hex = "0123456789ABCDEF";
 	const hexArray = hex.split("");
 	let number = n, cHex = [];
 	if (number > 16) {
-		let x = Math.floor(number / 16);
-		cHex.push(x);
-		let y = number % 16;
-		if (y < 10) {
-			cHex.push(y);
+		let numberDividedBySixteen = Math.floor(number / 16);
+		if (numberDividedBySixteen < 16) {
+			let x;
+			for (x in hexArray) {
+				if (numberDividedBySixteen == x) {
+					cHex.push(hexArray[x]);
+				}
+			}
+		}
+		let restFromDividing = number % 16;
+		if (restFromDividing < 16) {
+			let y;
+			for (y in hexArray) {
+				if (restFromDividing == y) {
+					cHex.push(hexArray[y]);
+				}
+			}
 		}
 	}
 	else {
