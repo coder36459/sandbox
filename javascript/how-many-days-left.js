@@ -1,6 +1,7 @@
 "use strict";
 const date = new Date();
-console.log(date.getFullYear());
+const year = date.getFullYear();
+console.log(year);
 const month = date.getMonth() + 1;
 console.log(date.getDate());
 console.log(date.getHours());
