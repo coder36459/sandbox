@@ -1,14 +1,12 @@
 "use strict";
 const date = new Date();
 const year = date.getFullYear();
-console.log(year);
 const month = date.getMonth() + 1;
 const day = date.getDate();
-console.log(day);
-console.log(date.getHours());
+const hour = date.getHours();
+console.log(hour);
 console.log(date.getMinutes());
 console.log(date.getSeconds());
-console.log();
 function lessThanTen(n) {
 	let s = String(n);
 	s = "0" + s;
@@ -20,3 +18,4 @@ if (month < 10) {
 else {
 	console.log(String(month));
 }
+console.log();
