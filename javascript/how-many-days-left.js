@@ -4,8 +4,8 @@ const year = date.getFullYear();
 const month = date.getMonth() + 1;
 const day = date.getDate();
 const hour = date.getHours();
-console.log(hour);
-console.log(date.getMinutes());
+const minute = date.getMinutes();
+console.log(minute);
 console.log(date.getSeconds());
 function lessThanTen(n) {
 	let s = String(n);
