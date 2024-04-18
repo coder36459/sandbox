@@ -5,8 +5,8 @@ const month = date.getMonth() + 1;
 const day = date.getDate();
 const hour = date.getHours();
 const minute = date.getMinutes();
-console.log(minute);
-console.log(date.getSeconds());
+const second = date.getSeconds();
+console.log(second);
 function lessThanTen(n) {
 	let s = String(n);
 	s = "0" + s;
@@ -18,4 +18,3 @@ if (month < 10) {
 else {
 	console.log(String(month));
 }
-console.log();
