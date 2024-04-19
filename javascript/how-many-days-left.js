@@ -6,7 +6,7 @@ const day = date.getDate();
 const hour = date.getHours();
 const minute = date.getMinutes();
 const second = date.getSeconds();
-console.log(second);
+let formatDT = [];
 function lessThanTen(n) {
 	let s = String(n);
 	s = "0" + s;
