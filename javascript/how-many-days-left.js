@@ -1,12 +1,14 @@
 "use strict";
 const date = new Date();
+const ye = date.getFullYear();
+const untilWhen = new Date(ye,11,31,23,59,59);
 function dateTime (d) {
-	const year = date.getFullYear();
-	const month = date.getMonth() + 1;
-	const day = date.getDate();
-	const hour = date.getHours();
-	const minute = date.getMinutes();
-	const second = date.getSeconds();
+	const year = d.getFullYear();
+	const month = d.getMonth() + 1;
+	const day = d.getDate();
+	const hour = d.getHours();
+	const minute = d.getMinutes();
+	const second = d.getSeconds();
 	function formatDateTime (y,m,d,h,i,s) {
 		function lessThanTen (n) {
 			let s = String(n);
@@ -50,3 +52,4 @@ function dateTime (d) {
 	return formatDateTime (year,month,day,hour,minute,second);
 }
 console.log(dateTime (date));
+console.log(dateTime (untilWhen));
