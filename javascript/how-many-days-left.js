@@ -53,3 +53,5 @@ function dateTime (d) {
 }
 console.log(dateTime (date));
 console.log(dateTime (untilWhen));
+console.log(date.getTime());
+console.log(untilWhen.getTime());
