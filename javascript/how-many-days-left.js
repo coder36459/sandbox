@@ -53,5 +53,17 @@ function dateTime (d) {
 }
 console.log(dateTime (date));
 console.log(dateTime (untilWhen));
-console.log(date.getTime());
-console.log(untilWhen.getTime());
+const a = date.getTime();
+const b = untilWhen.getTime();
+const c = b - a;
+const d = Math.floor(c / (24 * 60 * 60 * 1000));
+console.log("\nHow many days are left until the end of the year?");
+if (d == 0) {
+	console.log("Today is the last day of the year.");
+}
+if (d == 1) {
+	console.log("One day left until the end of the year.");
+}
+if (d > 1) {
+	console.log(d + " days left until the end of the year.");
+}
