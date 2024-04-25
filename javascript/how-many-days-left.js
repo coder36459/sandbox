@@ -1,7 +1,7 @@
 "use strict";
 const date = new Date();
 const ye = date.getFullYear();
-const untilWhen = new Date(ye,11,31,23,59,59);
+const untilWhen = new Date((ye + 1),0,1,0,0,0);
 function dateTime (d) {
 	const year = d.getFullYear();
 	const month = d.getMonth() + 1;
@@ -67,3 +67,7 @@ if (d == 1) {
 if (d > 1) {
 	console.log(d + " days left until the end of the year.");
 }
+const h = Math.floor((c - (d * 24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+const m = Math.floor((c - (d * 24 * 60 * 60 * 1000) - (h * 60 * 60 * 1000)) / (60 * 1000));
+const s = Math.floor((c - (d * 24 * 60 * 60 * 1000) - (h * 60 * 60 * 1000) - (m * 60 * 1000)) / 1000);
+console.log("\nHow much time is left until the end of the year?\n" + d + " days " + (h - 1) + " hours " + m + " minutes" + " and " + s + " seconds.");
