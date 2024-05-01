@@ -1,10 +1,21 @@
 "use strict";
 const n = [1,5,10,50,100,500,1000];
 const l = ["I","V","X","L","C","D","M"];
-const arabicNumeral = 13;
+const arabicNumeral = 10;
 let romanNumeral = "", x;
 l.reverse();
 function arabicToRoman(a) {
+	let i = a;
+	while (i > 0) {
+		for (x in n.reverse()) {
+			if (a == n[x]) {
+				romanNumeral += l[x];
+				i -= n[x];
+			}
+		}
+		//i -= 1;
+	}
+	/*
 	for (x in n.reverse()) {
 		if (a == n[x]) {
 			romanNumeral += l[x];
@@ -30,6 +41,7 @@ function arabicToRoman(a) {
 			}
 		}
 	}
+	*/
 	return romanNumeral;
 }
 console.log(arabicToRoman(arabicNumeral));
