@@ -1,7 +1,7 @@
 "use strict";
 const anyString = "ABC";
 const letters = [];
-let i = 97, j = 0, x;
+let i = 97, j = 0, aS = [], number = 0, x, y;
 while (i < 123) {
 	letters.push(String.fromCharCode(i).toUpperCase());
 	if (j + 1 > 9) {
@@ -13,7 +13,12 @@ while (i < 123) {
 	}
 	i += 1;
 }
+aS = anyString.split("");
 for (x in letters) {
-	console.log(letters[x]);
+	for (y in aS) {
+		if (letters[x] == aS[y]) {
+			number += letters[parseInt(x) + 1];
+		}
+	}
 }
-console.log(letters);
+console.log(number);
