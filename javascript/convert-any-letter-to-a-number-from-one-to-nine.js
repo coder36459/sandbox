@@ -1,5 +1,5 @@
 "use strict";
-const anyString = "ABC";
+const anyString = "ABC? ABC! ABC$";
 function converLetter(str) {
 	const letters = [];
 	let i = 97, j = 0, aS = [], number = 0, x, y;
@@ -22,6 +22,23 @@ function converLetter(str) {
 			}
 		}
 	}
-	return number;
+	number = parseInt(number);
+	function convertNumber(n) {
+		let num = n;
+		if (num < 0 ) {
+			num = -num;
+		}
+		if (num == -0) {
+			num = 0;
+		}
+		if (num != 0) {
+			num = num % 9;
+			if (num == 0) {
+				num = 9;
+			}
+		}
+		return num;
+	}
+	return convertNumber(number);
 }
 console.log(converLetter(anyString));
